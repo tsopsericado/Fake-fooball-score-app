@@ -22280,7 +22280,8 @@ export const Clubs = [
         path: "/home/fokam/uefa/Zvartnots-Yerevan.png",
       },
     ]
-   export const countries= [
+
+     const countries = [
       {
         country: "Albania",
         code: "AL",
@@ -22324,7 +22325,7 @@ export const Clubs = [
       {
         country: "Austria",
         code: "AT",
-        flag: "https://media.api-sports.io/flags/at.svg",
+        flag: "https://media.api-sports.io/flags/at.sv g",
       },
       {
         country: "Azerbaidjan",
