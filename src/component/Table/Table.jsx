@@ -12,7 +12,30 @@ export default function Table() {
     setCountries(club.countries);
   }, [clubs]);
 
-  console.clear();
+  const handleCountryChange =(e) =>{
+    e.preventDefault();
+    setClubs(e.target.value);
+  }
+
+  if (clubs.length > 0) { 
+    clubs.filter((team) => {
+      return team.name.path.match(clubs);
+    });
+  }
+
+    const handleClubChange = (e) => {
+      e.preventDefault();
+      setCountries(e.target.value);
+    };
+
+
+  if (countries.length > 0) {
+    countries.filter((count) => {
+      return count.country.flag.match(countries);
+    });
+  }
+
+  // console.clear();
   console.log(clubs);
   console.log(countries);
   console.log(club);
@@ -24,8 +47,8 @@ export default function Table() {
           <input
             type="search"
             placeholder="Search here"
-            // onChange={handleChange}
-            // value={searchInput}
+            onChange={handleCountryChange}
+            value={countries}
           />
 
           {countries?.map((count, index) => {
@@ -39,12 +62,12 @@ export default function Table() {
         </div>
 
         <div className="club">
-          {/* <input
+          <input
             type="search"
             placeholder="Search here"
-            onChange={handleChange}
-            value={searchInput}
-          /> */}
+            onChange={handleClubChange}
+            value={clubs}
+          />
 
           {clubs?.map((team, index) => {
             return (

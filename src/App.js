@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./component/navbar/NavBar";
 import Table from "./component/Table/Table";
-// import FetchData from "./component/FetchData";
+import MatchScoreboard from "./component/MatchScores/MatchScoreboard";
 import { club } from "./component/data/DummyData";
 
 function App() {
@@ -11,16 +11,15 @@ function App() {
   return (
     <div className="landing">
       <NavBar />
-      {/* <Table data={club}/> */}
-      <TableContext.Provider>
+      {/* <TableContext.Provider> */}
         <BrowserRouter>
           <Routes>
             <Route path="/table" element={<Table data={club} />} />
-            {/* <Route path="/fetchdata" element={<FetchData />} /> */}
+             <Route path="/matchScore" element={<MatchScoreboard />} /> 
             {/* <Route path="/dummydata" element={<DummyData />} /> */}
           </Routes>
         </BrowserRouter>
-      </TableContext.Provider>
+      {/* </TableContext.Provider> */}
     </div>
   );
 }
