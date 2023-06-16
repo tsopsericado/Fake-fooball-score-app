@@ -1,4 +1,7 @@
-export const Clubs = [
+export const club
+ = { 
+  
+   "clubs":[
       {
         name: "1.FC Kaiserslautern",
         url: "https://kassiesa.net/uefa/clubs/images/1.FC-Kaiserslautern.png",
@@ -22278,10 +22281,9 @@ export const Clubs = [
         name: "Zvartnots Yerevan",
         url: "https://kassiesa.net/uefa/clubs/images/Zvartnots-Yerevan.png",
         path: "/home/fokam/uefa/Zvartnots-Yerevan.png",
-      },
-    ]
-
-     const countries = [
+      }
+    ],
+      "countries":[
       {
         country: "Albania",
         code: "AL",
@@ -22325,7 +22327,7 @@ export const Clubs = [
       {
         country: "Austria",
         code: "AT",
-        flag: "https://media.api-sports.io/flags/at.sv g",
+        flag: "https://media.api-sports.io/flags/at.svg",
       },
       {
         country: "Azerbaidjan",
@@ -22926,69 +22928,6 @@ export const Clubs = [
         country: "Zimbabwe",
         code: "ZW",
         flag: "https://media.api-sports.io/flags/zw.svg",
-      },
-
-];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react'
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-
-// export default function Constdata() {
-    
-//     const [ posts, setPosts] = useState([]);
-//     const [Loading, setLoading]= useState(true);
-//     // fetch(
-//     //   `https://github.com/gilons/prognostiker/blob/master/src/meta/football.json`
-//     // ).then(response=>response.json()).then((json)=>setPosts(json));
-// const requestPosts = async()=>{
-
-//   await axios.get(
-//     `https://github.com/gilons/prognostiker/blob/master/src/meta/football.json`
-//   );
-//   setPosts(requestPosts.data);
-//   setLoading(false);
-// }
-
-//     useEffect(()=>{
-//         Constdata()
-//     },[])
-
-//   return (
-//     <div>
-//       {Loading ? (
-//         <div>Data is loading</div>
-//       ) : (
-//         <div>
-//           {posts.map((clubs, index) => {
-//             <div key={index}>
-//               {clubs.flag}.{clubs.name}
-//               <div>{clubs.body}</div>
-//               <hr></hr>
-//             </div>;
-//           })}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
+      }
+    ]
+  }
