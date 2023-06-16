@@ -3,3 +3,13 @@
   justify-content: center;
   align-item: center;
 }
+
+.team-name {
+  font-size:20px;
+  font-weigth: 800;
+  text-color:white;
+  background-color: blue;
+  padding: 25px;
+  border-raduis: 50%;
+
+}
