@@ -9,17 +9,18 @@ import { club } from "./component/data/DummyData";
 function App() {
   console.log(club);
   return (
-    <div className="landing"
->
+    <div className="landing">
       <NavBar />
       {/* <Table data={club}/> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/table" element={<Table data={club} />} />
-          {/* <Route path="/fetchdata" element={<FetchData />} /> */}
-          {/* <Route path="/dummydata" element={<DummyData />} /> */}
-        </Routes>
-      </BrowserRouter>
+      <TableContext.Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/table" element={<Table data={club} />} />
+            {/* <Route path="/fetchdata" element={<FetchData />} /> */}
+            {/* <Route path="/dummydata" element={<DummyData />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </TableContext.Provider>
     </div>
   );
 }
