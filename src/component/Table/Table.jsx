@@ -17,11 +17,11 @@ export default function Table() {
     setClubs(e.target.value);
   }
 
-  if (clubs.length > 0) { 
-    clubs.filter((team) => {
-      return team.name.path.match(clubs);
-    });
-  }
+  // if (clubs.length > 0) { 
+  //   clubs.filter((team) => {
+  //     return team.name.path.match(clubs);
+  //   });
+  // }
 
     const handleClubChange = (e) => {
       e.preventDefault();
@@ -29,11 +29,11 @@ export default function Table() {
     };
 
 
-  if (countries.length > 0) {
-    countries.filter((count) => {
-      return count.country.flag.match(countries);
-    });
-  }
+  // if (countries.length > 0) {
+  //   countries.filter((count) => {
+  //     return count.country.flag.match(countries);
+  //   });
+  // }
 
   // console.clear();
   console.log(clubs);

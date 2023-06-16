@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/table" element={<Table data={club} />} />
-             <Route path="/matchScore" element={<MatchScoreboard />} /> 
+             <Route path="/" element={<MatchScoreboard />} /> 
             {/* <Route path="/dummydata" element={<DummyData />} /> */}
           </Routes>
         </BrowserRouter>
