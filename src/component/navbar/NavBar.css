@@ -1,3 +1,14 @@
 .nav{
     
 }
+
+.navhead {
+   display:flex;
+   justify-content: center;
+   text-align: center;
+   font-weigth: 1000;
+   font-size:30px;
+   font-family: 'Playfair Display', serif;
+   padding:100px;
+
+}

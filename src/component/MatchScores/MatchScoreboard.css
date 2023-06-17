@@ -1,15 +1,20 @@
 .match-scoreboard {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-item: center;
 }
 
 .team-name {
-  font-size:20px;
+  font-size: 20px;
   font-weigth: 800;
-  text-color:white;
-  background-color: blue;
-  padding: 25px;
-  border-raduis: 50%;
+  text-color: white;
+  background: white;
+}
 
+.team-a {
+  background-color: green;
+}
+
+.team-b {
+  background-color: burlywood;
 }

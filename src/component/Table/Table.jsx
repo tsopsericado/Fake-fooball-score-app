@@ -1,44 +1,55 @@
 import React, { useEffect, useState } from "react";
 import { club } from "../data/DummyData";
-import './Table.css'
+import "./Table.css";
+import { useNavigate } from "react-router-dom";
 //import { useState } from "react";
 
 export default function Table() {
   const [clubs, setClubs] = useState([]);
   const [countries, setCountries] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setClubs(club.clubs);
     setCountries(club.countries);
   }, [clubs]);
 
-  const handleCountryChange =(e) =>{
-    e.preventDefault();
-    setClubs(e.target.value);
-  }
+  // const handleCountryChange = (e) => {
+  //   e.preventDefault();
+  //   setClubs(e.target.value);
+  // };
 
-  // if (clubs.length > 0) { 
-  //   clubs.filter((team) => {
-  //     return team.name.path.match(clubs);
-  //   });
-  // }
+  // const handleClubChange = (e) => {
+  //   e.preventDefault();
+  //   setCountries(e.target.value);
+  // };
 
-    const handleClubChange = (e) => {
-      e.preventDefault();
-      setCountries(e.target.value);
-    };
-
-
-  // if (countries.length > 0) {
-  //   countries.filter((count) => {
-  //     return count.country.flag.match(countries);
-  //   });
-  // }
-
-  // console.clear();
   console.log(clubs);
   console.log(countries);
   console.log(club);
+
+  const updateStorage = (teamData) => {
+    localStorage.setItem("teamData", JSON.stringify(teamData));
+  };
+
+  const chooseTeam = (team) => {
+    const locaTeam = JSON.parse(localStorage.getItem("teamData"));
+
+    if (!locaTeam) return navigate("/");
+
+    if (locaTeam.choice === "teamA") {
+      locaTeam.teams.teamA = team;
+      updateStorage(locaTeam);
+    }
+
+    if (locaTeam.choice === "teamB") {
+      locaTeam.teams.teamB = team;
+      updateStorage(locaTeam);
+    }
+
+    navigate("/");
+  };
+
   return (
     <div className="tablehead">
       <h1>countries and clubs</h1>
@@ -47,13 +58,16 @@ export default function Table() {
           <input
             type="search"
             placeholder="Search here"
-            onChange={handleCountryChange}
-            value={countries}
+            // onChange={handleCountryChange}
           />
 
           {countries?.map((count, index) => {
             return (
-              <div key={count.country + index} className="countryImage">
+              <div
+                key={count.country + index}
+                className="countryImage"
+                onClick={() => chooseTeam(count)}
+              >
                 <img src={count.flag} alt="flag" />
                 <h1 className="name">{count.country}</h1>
               </div>
@@ -65,13 +79,13 @@ export default function Table() {
           <input
             type="search"
             placeholder="Search here"
-            onChange={handleClubChange}
+            // onChange={handleClubChange}
             value={clubs}
           />
 
           {clubs?.map((team, index) => {
             return (
-              <div key={team.clubs + index}>
+              <div key={team.clubs + index} onClick={() => chooseTeam(team)}>
                 <img src={team.url} alt="flag" />
                 <h1 className="name">{team.name}</h1>
               </div>
@@ -83,19 +97,19 @@ export default function Table() {
   );
 }
 
-<>
-  {/* <div>
-      {club.clubs.map((match)=>( 
-        <div>{match.name.url}</div>
-      ))}
-    </div>
-  
-    <div>
-      {club.countries.map((match)=>(
-       <div>{match.country.code.flag}</div>
-      ))}
-    </div> */}
-</>;
+//<>
+//   <div>
+//     {club.clubs.map((match)=>(
+//       <div>{match.name.url}</div>
+//     ))}
+//  </div>
+
+//   <div>
+//   {club.countries.map((match)=>(
+//   <div>{match.country.code.flag}</div>
+//   ))}
+// </div>
+//</>;
 
 // const [firstTeam, setFirstTeam] = useState(null);
 // const [secondTeam, setSecondTeam] = useState(null);

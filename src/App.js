@@ -12,16 +12,17 @@ function App() {
     <div className="landing">
       <NavBar />
       {/* <TableContext.Provider> */}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/table" element={<Table data={club} />} />
-             <Route path="/" element={<MatchScoreboard />} /> 
-            {/* <Route path="/dummydata" element={<DummyData />} /> */}
-          </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/table" element={<Table data={club} />} />
+          <Route path="/" element={<MatchScoreboard />} />
+          {/* <Route path="/dummydata" element={<DummyData />} /> */}
+        </Routes>
+      </BrowserRouter>
       {/* </TableContext.Provider> */}
     </div>
   );
 }
 
 export default App;
+  

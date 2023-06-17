@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <>
       <div class="nav">
-        <a href="/" className="btn btn-ghost normal-case text-3xl bold">
+        <a href="/" className="navhead">
           Predict The Score Of Match
         </a>
         
