@@ -1,9 +1,9 @@
-import './App.css';
+import "./App.css";
 // import React, { useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./component/navbar/NavBar";
-import Table from "./component/Table/Table";
-import MatchScoreboard from "./component/MatchScores/MatchScoreboard";
+import Table from "./pages/Table/Table";
+import MatchScoreboard from "./pages/MatchScores/MatchScoreboard";
 import { club } from "./component/data/DummyData";
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/table" element={<Table data={club} />} />
           <Route path="/" element={<MatchScoreboard />} />
-          {/* <Route path="/dummydata" element={<DummyData />} /> */}
         </Routes>
       </BrowserRouter>
       {/* </TableContext.Provider> */}
@@ -25,4 +24,3 @@ function App() {
 }
 
 export default App;
-  

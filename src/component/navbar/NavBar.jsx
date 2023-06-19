@@ -6,7 +6,7 @@ export default function NavBar() {
     <>
       <div class="nav">
         <a href="/" className="navhead">
-          Predict The Score Of Match
+          Select Your Team
         </a>
         
       </div>

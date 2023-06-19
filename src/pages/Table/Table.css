@@ -1,0 +1,34 @@
+.tablehead {
+}
+
+.searchdiv {
+    display:flex;
+    align-item:center;
+    flex-direction:center;
+    justify-content:center; 
+    position:relative;
+}
+
+#search {
+    padding:10px 20px;
+    border-raduis:50%;
+    position:fixed;
+}
+
+.teams {
+  display:flex;
+  justify-content:space-around;
+  align-item:center;
+}
+
+.countryImage{
+    width:10%;
+}
+
+.name{
+    text:
+}
+
+.club{
+    width:5%;
+}

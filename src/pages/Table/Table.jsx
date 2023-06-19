@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { club } from "../data/DummyData";
+import { club } from "../../component/data/DummyData";
 import "./Table.css";
 import { useNavigate } from "react-router-dom";
-//import { useState } from "react";
 
 export default function Table() {
   const [clubs, setClubs] = useState([]);
@@ -52,15 +51,12 @@ export default function Table() {
 
   return (
     <div className="tablehead">
-      <h1>countries and clubs</h1>
+      <div className="searchdiv">
+        <input type="search" name="search" id="search" placeholder="search" />
+        <h1>countries and clubs</h1>
+      </div>
       <div className="teams">
         <div className="country">
-          <input
-            type="search"
-            placeholder="Search here"
-            // onChange={handleCountryChange}
-          />
-
           {countries?.map((count, index) => {
             return (
               <div
@@ -76,13 +72,6 @@ export default function Table() {
         </div>
 
         <div className="club">
-          <input
-            type="search"
-            placeholder="Search here"
-            // onChange={handleClubChange}
-            value={clubs}
-          />
-
           {clubs?.map((team, index) => {
             return (
               <div key={team.clubs + index} onClick={() => chooseTeam(team)}>
