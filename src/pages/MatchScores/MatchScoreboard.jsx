@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./MatchScoreboard.css";
 import { useNavigate } from "react-router-dom";
-import { saveAs } from "file-saver";
 
 export default function MatchScoreboard() {
   const [teamAScore, setTeamAScore] = useState(0);
@@ -48,6 +47,9 @@ export default function MatchScoreboard() {
         </p>
 
         <img
+          className="image"
+          width="150"
+          height="40"
           src={
             choosenTeams?.teams?.teamA?.path || choosenTeams?.teams?.teamA?.flag
           }
@@ -63,8 +65,10 @@ export default function MatchScoreboard() {
         </p>
 
         <img
+          width="150"
+          height="40"
           src={
-            choosenTeams?.teams?.teamB?.path || choosenTeams?.teams?.teamB?.url
+            choosenTeams?.teams?.teamB?.url || choosenTeams?.teams?.teamB?.flag
           }
           alt="path"
         />

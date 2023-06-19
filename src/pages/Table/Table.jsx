@@ -4,6 +4,7 @@ import "./Table.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Table() {
+  const [val, setVal] = useState("");
   const [clubs, setClubs] = useState([]);
   const [countries, setCountries] = useState([]);
   const navigate = useNavigate();
@@ -23,9 +24,7 @@ export default function Table() {
   //   setCountries(e.target.value);
   // };
 
-  console.log(clubs);
-  console.log(countries);
-  console.log(club);
+  console.log(val.charAt(0));
 
   const updateStorage = (teamData) => {
     localStorage.setItem("teamData", JSON.stringify(teamData));
@@ -52,34 +51,83 @@ export default function Table() {
   return (
     <div className="tablehead">
       <div className="searchdiv">
-        <input type="search" name="search" id="search" placeholder="search" />
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+          onChange={(e) => {
+            setVal(e.target.value);
+          }}
+        />
         <h1>countries and clubs</h1>
       </div>
       <div className="teams">
         <div className="country">
-          {countries?.map((count, index) => {
-            return (
-              <div
-                key={count.country + index}
-                className="countryImage"
-                onClick={() => chooseTeam(count)}
-              >
-                <img src={count.flag} alt="flag" />
-                <h1 className="name">{count.country}</h1>
-              </div>
-            );
-          })}
+          {val !== ""
+            ? club.clubs
+                .filter(
+                  (clubss) =>
+                    clubss.name.toLocaleLowerCase() === val.toLocaleLowerCase()
+                )
+                .map((filteredclub) => {
+                  return (
+                    <div
+                      key={filteredclub.name}
+                      className="countryImage"
+                      // onClick={() => chooseTeam(count)}
+                    >
+                      <img src={filteredclub.url} alt="flag" />
+                      <h1 className="name">{filteredclub.name}</h1>
+                    </div>
+                  );
+                })
+            : countries?.map((count, index) => {
+                return (
+                  <div
+                    key={count.country + index}
+                    className="countryImage"
+                    onClick={() => chooseTeam(count)}
+                  >
+                    <img src={count.flag} alt="flag" />
+                    <h1 className="name">{count.country}</h1>
+                  </div>
+                );
+              })}
         </div>
 
         <div className="club">
-          {clubs?.map((team, index) => {
-            return (
-              <div key={team.clubs + index} onClick={() => chooseTeam(team)}>
-                <img src={team.url} alt="flag" />
-                <h1 className="name">{team.name}</h1>
-              </div>
-            );
-          })}
+          {val !== ""
+            ? club.countries
+                .filter(
+                  (count) =>
+                    count.country.toLocaleLowerCase() ===
+                    val.toLocaleLowerCase()
+                )
+                .map((filteredcount) => {
+                  return (
+                    <div
+                      key={filteredcount.country}
+                      className="countryImage"
+                      // onClick={() => chooseTeam(count)}
+                    >
+                      <img src={filteredcount.flag} alt="flag" />
+                      <h1 className="name">{filteredcount.country}</h1>
+                    </div>
+                  );
+                })
+            : clubs?.map((club, index) => {
+                return (
+                  <div
+                    key={club.name + index}
+                    className="countryImage"
+                    onClick={() => chooseTeam(club)}
+                  >
+                    <img src={club.url} alt="flag" />
+                    <h1 className="name">{club.name}</h1>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>
