@@ -1,4 +1,4 @@
-.match-scoreboard {
+#match-scoreboard {
   display: flex;
   justify-content: space-around;
   align-item: center;

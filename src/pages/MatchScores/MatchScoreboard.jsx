@@ -46,18 +46,25 @@ export default function MatchScoreboard() {
     if (locaTeam) setChoosenTeams(locaTeam);
   }, []);
 
-  const captureScreen = () => {
-    const element = document.getElementById("");
-    html2canvas(element).then((canvas) => {
-      const link = document.createElement("a");
-      link.download = "screenshot.png";
-      link.href = canvas.toDataURL();
-      link.click();
-    });
-  };
+  // const captureScreen = () => {
+  //   const element = document.getElementById("#match-scoreboard");
+  //   html2canvas(element).then((canvas) => {
+  //     const link = document.createElement("a");
+  //     link.download = "screenshot.png";
+  //     link.href = canvas.toDataURL();
+  //     link.click();
+  //   });
+  // };
 
+ const canvasRef = React.useRef(null);
+  const SaveImageToLocal =(event)=> {
+    let link = event.currentTarget;
+    link.setAttribute('download', 'canvas.png');
+    let image = canvasRef.current.toDataURL('image/png');
+    link.setAttribute('href', image);
+  }
   return (
-    <div className="match-scoreboard">
+    <div id="match-scoreboard" ref={canvasRef}>
       <div>
         <input
           type="number"
@@ -108,7 +115,11 @@ export default function MatchScoreboard() {
           />
         </div>
       </div>
-      <button onClick={captureScreen}>Capture Screen</button>
+      {/* <button onClick={captureScreen}>Capture Screen</button> */}
+      <button>
+        <a id="Capture_image_link" href="capture_link" onClick={SaveImageToLocal}>Capture Image</a>
+      </button>
     </div>
   );
 }
+ 
