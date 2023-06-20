@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./MatchScoreboard.css";
 import { useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
 
 export default function MatchScoreboard() {
   const [teamAScore, setTeamAScore] = useState(0);
@@ -35,6 +36,16 @@ export default function MatchScoreboard() {
 
     if (locaTeam) setChoosenTeams(locaTeam);
   }, []);
+
+  const captureScreen =()=>{
+    const  element = document.getElementById('');
+    html2canvas(element).then(canvas=>{
+      const link = document.createElement('a');
+      link.download ='screenshot.png';
+      link.href = canvas.toDataURL();
+      link.click()
+    })
+  }
 
   return (
     <div className="match-scoreboard">
@@ -73,6 +84,7 @@ export default function MatchScoreboard() {
           alt="path"
         />
       </div>
+        <button onClick={captureScreen}>Capture Screen</button>
     </div>
   );
 }
