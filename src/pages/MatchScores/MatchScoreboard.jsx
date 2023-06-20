@@ -14,6 +14,15 @@ export default function MatchScoreboard() {
     },
   });
 
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setTeamAScore(value)
+  };
+   
+  const handleChange1 = (event) => {
+    const value = event.target.value;
+    setTeamBScore(value)
+  }
   const navigate = useNavigate();
 
   const selectTeam = (team) => {
@@ -37,54 +46,69 @@ export default function MatchScoreboard() {
     if (locaTeam) setChoosenTeams(locaTeam);
   }, []);
 
-  const captureScreen =()=>{
-    const  element = document.getElementById('');
-    html2canvas(element).then(canvas=>{
-      const link = document.createElement('a');
-      link.download ='screenshot.png';
+  const captureScreen = () => {
+    const element = document.getElementById("");
+    html2canvas(element).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "screenshot.png";
       link.href = canvas.toDataURL();
-      link.click()
-    })
-  }
+      link.click();
+    });
+  };
 
   return (
     <div className="match-scoreboard">
-      <div className="team-a" onClick={() => selectTeam("teamA")}>
-        <div className="team-score">{teamAScore}</div>
-
-        <p>
-          {choosenTeams?.teams?.teamA?.name ||
-            choosenTeams?.teams?.teamA?.country}
-        </p>
-
-        <img
-          className="image"
-          width="150"
-          height="40"
-          src={
-            choosenTeams?.teams?.teamA?.path || choosenTeams?.teams?.teamA?.flag
-          }
-          alt="flag"
+      <div>
+        <input
+          type="number"
+          placeholder="00"
+          onChange={handleChange}
+          value={teamAScore}
         />
+        <div className="team-a" onClick={() => selectTeam("teamA")}>
+          <p>
+            {choosenTeams?.teams?.teamA?.name ||
+              choosenTeams?.teams?.teamA?.country}
+          </p>
+
+          <img
+            className="image"
+            width="150"
+            height="40"
+            src={
+              choosenTeams?.teams?.teamA?.path ||
+              choosenTeams?.teams?.teamA?.flag
+            }
+            alt="flag"
+          />
+        </div>
       </div>
 
-      <div className="team-b" onClick={() => selectTeam("teamB")}>
-        <div className="team-score">{teamBScore}</div>
-        <p>
-          {choosenTeams?.teams?.teamB?.name ||
-            choosenTeams?.teams?.teamB?.country}
-        </p>
-
-        <img
-          width="150"
-          height="40"
-          src={
-            choosenTeams?.teams?.teamB?.url || choosenTeams?.teams?.teamB?.flag
-          }
-          alt="path"
+      <div>
+        <input
+          type="number"
+          placeholder="00"
+          onChange={handleChange1}
+          value={teamBScore}
         />
+        <div className="team-b" onClick={() => selectTeam("teamB")}>
+          <p>
+            {choosenTeams?.teams?.teamB?.name ||
+              choosenTeams?.teams?.teamB?.country}
+          </p>
+
+          <img
+            width="150"
+            height="40"
+            src={
+              choosenTeams?.teams?.teamB?.url ||
+              choosenTeams?.teams?.teamB?.flag
+            }
+            alt="path"
+          />
+        </div>
       </div>
-        <button onClick={captureScreen}>Capture Screen</button>
+      <button onClick={captureScreen}>Capture Screen</button>
     </div>
   );
 }
