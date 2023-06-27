@@ -1,5 +1,6 @@
 .nav{
-   background: lightblue; 
+   background: lightgray; 
+
 }
 
 .navhead {
@@ -10,5 +11,5 @@
    font-size: 40px ;
    font-family: 'Playfair Display', serif;
    padding:20px;
-
+   position:relative;
 }

@@ -60,10 +60,12 @@ export default function Table() {
             setVal(e.target.value);
           }}
         />
-        <h1>countries and clubs</h1>
       </div>
       <div className="teams">
         <div className="country">
+          <h1 className="teamList">
+            Con<span>tries</span>
+          </h1>
           {val !== ""
             ? club.clubs
                 .filter(
@@ -89,14 +91,18 @@ export default function Table() {
                     className="countryImage"
                     onClick={() => chooseTeam(count)}
                   >
-                    <img src={count.flag} alt="flag" />
+                    <img src={count.flag} alt="flag" className="image" />
                     <h1 className="name">{count.country}</h1>
+                    <hr />
                   </div>
                 );
               })}
         </div>
 
         <div className="club">
+          <h1 className="teamList">
+            C<span>lu</span>b
+          </h1>
           {val !== ""
             ? club.countries
                 .filter(
@@ -123,8 +129,9 @@ export default function Table() {
                     className="countryImage"
                     onClick={() => chooseTeam(club)}
                   >
-                    <img src={club.url} alt="flag" />
+                    <img src={club.url} alt="flag" className="image" />
                     <h1 className="name">{club.name}</h1>
+                    <hr />
                   </div>
                 );
               })}
@@ -190,7 +197,7 @@ export default function Table() {
 //     <select name="FirstTeam" id="">firstTeam</select>
 //     <input type="number" name="score" id="" />
 //     </div>
-//     <div>
+//     <div>  
 //     <select name="SecondTeam" id="">secondTeam</select>
 //     <input type="number" name="score" id="" />
 //     </div>

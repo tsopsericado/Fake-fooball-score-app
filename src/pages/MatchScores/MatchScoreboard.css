@@ -1,12 +1,15 @@
-#match-scoreboard {
+.team1team2 {
+  font-family: "Playfair Display", serif;
   display: flex;
   justify-content: space-around;
-  align-item: center;
-  background-image: url("https://images.pexels.com/photos/2435290/pexels-photo-2435290.jpeg?auto=compress&cs=tinysrgb&w=600");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  width: 100%;
+  align-items: center;
+  align-self: center;
+  width: 60%;
+  border: 2px solid gray;
+  border-radius: 25% 0;
+  box-shadow: 1px 16px;
+  padding: 5%;
+  margin: 20%;
 }
 
 .team-name {
@@ -16,15 +19,46 @@
   background: white;
 }
 
+.team1 {
+  display: flex;
+}
+
+.team2 {
+  border-radius: 50%;
+  display: flex;
+}
+
 .team-a {
-  background-color: blue;
-  border-raduis:50%;
+
 }
 
 .team-b {
-  background-color: green;
+  border-radius: 10%;
 }
 
- /* .image{
-  width:10%;
-} */
+.home{
+  font-size:20px;
+   
+}
+
+.away {
+  font-size: 20px; 
+}
+
+.oponents_images {
+  border-raduis: 50%;
+}
+
+.button {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: white;
+  background: lightgray;
+  border-radius: 25px;
+  padding: 5px 20px;
+  box-shadow: 2px 2px;
+  margin-left: 45%;
+  margin-buttom:10%;
+}

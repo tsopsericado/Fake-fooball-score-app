@@ -59,65 +59,77 @@ export default function MatchScoreboard() {
  const canvasRef = React.useRef(null);
   const SaveImageToLocal =(event)=> {
     let link = event.currentTarget;
-    link.setAttribute('download', 'canvas.png');
+    link.setAttribute('download', 'football.png');
     let image = canvasRef.current.toDataURL('image/png');
     link.setAttribute('href', image);
   }
   return (
     <div id="match-scoreboard" ref={canvasRef}>
-      <div>
-        <input
-          type="number"
-          placeholder="00"
-          onChange={handleChange}
-          value={teamAScore}
-        />
-        <div className="team-a" onClick={() => selectTeam("teamA")}>
-          <p>
-            {choosenTeams?.teams?.teamA?.name ||
-              choosenTeams?.teams?.teamA?.country}
-          </p>
-
-          <img
-            className="image"
-            width="150"
-            height="40"
-            src={
-              choosenTeams?.teams?.teamA?.path ||
-              choosenTeams?.teams?.teamA?.flag
-            }
-            alt="flag"
+      <div className="team1team2">
+        <div className="team1">
+          <div className="team-a" onClick={() => selectTeam("teamA")}>
+            <p className="home">Home</p>
+            <img
+              className="oponents_images"
+              width="150"
+              height="40"
+              src={
+                choosenTeams?.teams?.teamA?.path ||
+                choosenTeams?.teams?.teamA?.flag
+              }
+              alt="flag"
+            />
+            <p>
+              {choosenTeams?.teams?.teamA?.name ||
+                choosenTeams?.teams?.teamA?.country}
+            </p>
+          </div>
+          <input
+            type="number"
+            placeholder="0"
+            onChange={handleChange}
+            value={teamAScore}
           />
         </div>
-      </div>
 
-      <div>
-        <input
-          type="number"
-          placeholder="00"
-          onChange={handleChange1}
-          value={teamBScore}
-        />
-        <div className="team-b" onClick={() => selectTeam("teamB")}>
-          <p>
-            {choosenTeams?.teams?.teamB?.name ||
-              choosenTeams?.teams?.teamB?.country}
-          </p>
+        <div className="team2">
+          <div>
+            <input
+              type="number"
+              placeholder="0"
+              onChange={handleChange1}
+              value={teamBScore}
+            />
+          </div>
+          <div className="team-b" onClick={() => selectTeam("teamB")}>
+            <p className="away">Away</p>
+            <img
+              className="oponents_images"
+              width="150"
+              height="40"
+              src={
+                choosenTeams?.teams?.teamB?.url ||
+                choosenTeams?.teams?.teamB?.flag
+              }
+              alt="path"
+            />
 
-          <img
-            width="150"
-            height="40"
-            src={
-              choosenTeams?.teams?.teamB?.url ||
-              choosenTeams?.teams?.teamB?.flag
-            }
-            alt="path"
-          />
+            <p>
+              {choosenTeams?.teams?.teamB?.name ||
+                choosenTeams?.teams?.teamB?.country}
+            </p>
+          </div>
         </div>
       </div>
       {/* <button onClick={captureScreen}>Capture Screen</button> */}
-      <button>
-        <a id="Capture_image_link" href="capture_link" onClick={SaveImageToLocal}>Capture Image</a>
+      <button className="button">
+        <a
+          id="Capture_image_link"
+          href="capture_link"
+          onClick={SaveImageToLocal}
+        >
+          Capture Image
+        </a>
       </button>
     </div>
   );
