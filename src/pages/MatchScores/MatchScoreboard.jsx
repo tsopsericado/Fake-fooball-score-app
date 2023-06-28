@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./MatchScoreboard.css";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import Canvas2Image from 
 
 export default function MatchScoreboard() {
   const [teamAScore, setTeamAScore] = useState(0);
@@ -48,25 +47,8 @@ export default function MatchScoreboard() {
   }, []);
 
 
-  document.querySelector("button").addEventListener("click", function () {
-    html2canvas(document.querySelector(".match-scoreboard"), {
-      onrendered: function (canvas) {
-        // document.body.appendChild(canvas);
-        return Canvas2Image.saveAsPNG(canvas);
-      },
-    });
-  });
-
-
-//  const canvasRef = React.useRef(null);
-//   const SaveImageToLocal =(event)=> {
-//     let link = event.currentTarget;
-//     link.setAttribute('download', 'football.png');
-//     let image = canvasRef.current.toDataURL('image/png');
-//     link.setAttribute('href', image);
-//   }
   return (
-    <div id="match-scoreboard" ref={Canvas2Image}>
+    <div id="match-scoreboard" ref={printRef}>
       <div className="team1team2">
         <div className="team1">
           <div className="team-a" onClick={() => selectTeam("teamA")}>
@@ -128,18 +110,9 @@ export default function MatchScoreboard() {
           </div>
         </div>
       </div>
-      <button type="button" className="button">
+      <button type="button" className="button" onClick={handleDownloadImage}>
         Capture Screen
       </button>
-      {/* <button className="button">
-        <a
-          id="Capture_image_link"
-          href="capture_link"
-          onClick={SaveImageToLocal}
-        >
-          Capture Image
-        </a>
-      </button> */}
     </div>
   );
 }
