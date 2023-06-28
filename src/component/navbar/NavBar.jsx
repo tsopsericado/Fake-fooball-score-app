@@ -6,9 +6,8 @@ export default function NavBar() {
     <>
       <div class="nav">
         <a href="/" className="navhead">
-          Pronostic Football Faking App
-        </a>
-        
+         Pronostic Football Faking app
+        </a>        
       </div>
     </>
   );

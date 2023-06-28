@@ -10,17 +10,33 @@
   box-shadow: 1px 16px;
   padding: 5%;
   margin: 20%;
+  background-color: rgba(0, 255, 255, 0.408);
 }
 
 .team-name {
   font-size: 20px;
-  font-weigth: 800;
-  text-color: white;
+  font-weight: 800;
+  text-decoration-color: white;
   background: white;
 }
 
 .team1 {
   display: flex;
+}
+
+.input1 {
+  text-align: right;
+}
+
+.twodots{
+  padding: 1px 5px;
+}
+
+.inputs{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* width: 2rem; */
 }
 
 .team2 {
@@ -38,15 +54,18 @@
 
 .home{
   font-size:20px;
-   
+  padding: 10px;
+  font-weight: bold;
 }
 
 .away {
-  font-size: 20px; 
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold; 
 }
 
 .oponents_images {
-  border-raduis: 50%;
+  border-radius: 50%;
 }
 
 .button {
@@ -60,5 +79,5 @@
   padding: 5px 20px;
   box-shadow: 2px 2px;
   margin-left: 45%;
-  margin-buttom:10%;
+  margin-bottom:10%;
 }

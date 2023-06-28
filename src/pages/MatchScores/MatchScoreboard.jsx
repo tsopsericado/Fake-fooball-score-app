@@ -84,23 +84,28 @@ export default function MatchScoreboard() {
                 choosenTeams?.teams?.teamA?.country}
             </p>
           </div>
+        </div>
+        <div className="inputs">
+        <div>
           <input
             type="number"
             placeholder="0"
             onChange={handleChange}
             value={teamAScore}
+            className="input1"
           />
         </div>
-
+         <p className="twodots">:</p>
+        <div>
+          <input
+            type="number"
+            placeholder="0"
+            onChange={handleChange1}
+            value={teamBScore}
+          />
+        </div>
+        </div>
         <div className="team2">
-          <div>
-            <input
-              type="number"
-              placeholder="0"
-              onChange={handleChange1}
-              value={teamBScore}
-            />
-          </div>
           <div className="team-b" onClick={() => selectTeam("teamB")}>
             <p className="away">Away</p>
             <img
