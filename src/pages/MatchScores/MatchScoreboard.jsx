@@ -46,6 +46,27 @@ export default function MatchScoreboard() {
     if (locaTeam) setChoosenTeams(locaTeam);
   }, []);
 
+    const printRef = React.useRef();
+
+    const handleDownloadImage = async () => {
+      const element = printRef.current;
+      const canvas = await html2canvas(element);
+
+      const data = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+
+      if (typeof link.download === "string") {
+        link.href = data;
+        link.download = "image.png";
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        window.open(data);
+      }
+    };
+
 
   return (
     <div id="match-scoreboard" ref={printRef}>
