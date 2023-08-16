@@ -1,16 +1,26 @@
+.match-scoreboard {
+  margin: auto;
+  padding: 0px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background: gray;
+}
+
 .team1team2 {
   font-family: "Playfair Display", serif;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   align-self: center;
-  width: 60%;
+  width: 50%;
   border: 2px solid gray;
   border-radius: 25% 0;
-  box-shadow: 1px 16px;
-  padding: 5%;
-  margin: 20%;
-  background-color: rgba(0, 255, 255, 0.408);
+  /* box-shadow: 1px 16px; */
+  padding: 3%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgba(232, 234, 234, 0.862);
 }
 
 .team-name {
@@ -26,13 +36,20 @@
 
 .input1 {
   text-align: right;
+  background-color: rgba(0, 255, 255, 0.485);
+  width: 100px;
 }
 
-.twodots{
+.input2 {
+  background-color: rgba(0, 255, 255, 0.485);
+  width: 100px;
+}
+
+.twodots {
   padding: 1px 5px;
 }
 
-.inputs{
+.inputs {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -45,15 +62,15 @@
 }
 
 .team-a {
-
+  
 }
 
 .team-b {
   border-radius: 10%;
 }
 
-.home{
-  font-size:20px;
+.home {
+  font-size: 20px;
   padding: 10px;
   font-weight: bold;
 }
@@ -61,7 +78,7 @@
 .away {
   font-size: 20px;
   padding: 10px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .oponents_images {
@@ -79,5 +96,6 @@
   padding: 5px 20px;
   box-shadow: 2px 2px;
   margin-left: 45%;
-  margin-bottom:10%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }

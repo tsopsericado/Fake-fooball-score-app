@@ -100,13 +100,14 @@ export default function MatchScoreboard() {
               className="input1"
             />
           </div>
-          <p className="twodots">:</p>
+          <p className="twodots"></p>
           <div>
             <input
               type="number"
               placeholder="0"
               onChange={handleChange1}
               value={teamBScore}
+              className="input2"
             />
           </div>
         </div>

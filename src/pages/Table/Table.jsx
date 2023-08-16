@@ -14,16 +14,6 @@ export default function Table() {
     setCountries(club.countries);
   }, [clubs]);
 
-  // const handleCountryChange = (e) => {
-  //   e.preventDefault();
-  //   setClubs(e.target.value);
-  // };
-
-  // const handleClubChange = (e) => {
-  //   e.preventDefault();
-  //   setCountries(e.target.value);
-  // };
-
   console.log(val.charAt(0));
 
   const updateStorage = (teamData) => {
