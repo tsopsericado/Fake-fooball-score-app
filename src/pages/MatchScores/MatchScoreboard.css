@@ -1,0 +1,101 @@
+.match-scoreboard {
+  margin: auto;
+  padding: 0px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background: gray;
+}
+
+.team1team2 {
+  font-family: "Playfair Display", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 50%;
+  border: 2px solid gray;
+  border-radius: 25% 0;
+  /* box-shadow: 1px 16px; */
+  padding: 3%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgba(232, 234, 234, 0.862);
+}
+
+.team-name {
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration-color: white;
+  background: white;
+}
+
+.team1 {
+  display: flex;
+}
+
+.input1 {
+  text-align: right;
+  background-color: rgba(0, 255, 255, 0.485);
+  width: 100px;
+}
+
+.input2 {
+  background-color: rgba(0, 255, 255, 0.485);
+  width: 100px;
+}
+
+.twodots {
+  padding: 1px 5px;
+}
+
+.inputs {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* width: 2rem; */
+}
+
+.team2 {
+  border-radius: 50%;
+  display: flex;
+}
+
+.team-a {
+  
+}
+
+.team-b {
+  border-radius: 10%;
+}
+
+.home {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.away {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.oponents_images {
+  border-radius: 50%;
+}
+
+.button {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: white;
+  background: lightgray;
+  border-radius: 25px;
+  padding: 5px 20px;
+  box-shadow: 2px 2px;
+  margin-left: 45%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
