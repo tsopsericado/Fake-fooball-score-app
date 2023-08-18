@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="landing">
       <NavBar />
-      {/* <TableContext.Provider> */}
+      <TableContext.Provider>
       <BrowserRouter>
         <Routes>
           <Route path="/table" element={<Table data={club} />} />
